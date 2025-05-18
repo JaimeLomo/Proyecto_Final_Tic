@@ -1,8 +1,15 @@
-FROM python:3.10-slim
-RUN apt update && apt install -y sysbench git curl procps \
-    && pip install --upgrade pip \
-    && pip install jupyter matplotlib psutil
+# scripts/Dockerfile
+FROM node:20-alpine
+
+# Crear carpeta y copiar juego
 WORKDIR /app
-COPY . .
-EXPOSE 8888
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token=''"]
+COPY ../pacman-server /app
+
+# Instalar Express para servidor
+RUN npm install express
+
+# Exponer puerto del juego
+EXPOSE 3000
+
+# Comando que levanta el servidor
+CMD ["node", "server.js"]
