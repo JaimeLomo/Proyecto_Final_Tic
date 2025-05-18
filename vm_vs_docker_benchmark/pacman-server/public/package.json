@@ -1,0 +1,14 @@
+{
+  "name": "pacman-server",
+  "version": "1.0.0",
+  "description": "Servidor Express para el juego Pac-Man",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Jaime",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
