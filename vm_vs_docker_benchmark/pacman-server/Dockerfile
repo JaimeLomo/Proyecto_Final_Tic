@@ -1,11 +1,5 @@
 FROM node:20-alpine
-
 WORKDIR /app
-
-COPY pacman-server /app
-
+COPY . .
 RUN npm install
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
